@@ -15,7 +15,7 @@ export default function Navbar(props) {
           <Link className="nav-link" aria-current="page" to="/">Home</Link>{/*part 1*/}
         </li>
         <li className="nav-item">
-              <Link className="nav-link" to="/about">About</Link>{/*part 2 ,,,, In part 1 and 2 we can also use 
+              <Link className="nav-link" to="/about">{props.aboutText}</Link>{/*part 2 ,,,, In part 1 and 2 we can also use 
           a in place of Link and href in place of to, but it reloads ... other wise using link and to makes 
             spa without reloading*/}
         </li>
@@ -37,7 +37,7 @@ export default function Navbar(props) {
         <button className="btn btn-outline-success" type="submit">Search</button>
         </form>*/}
           <div className={`form-check form-switch text-${props.mode==='light'?'dark':'light'}`}>
-            <input className="form-check-input" onClick={() => { props.toggleMode(null) }} type="checkbox"
+            <input className="form-check-input" onClick={props.toggleMode} type="checkbox"
               role="switch" id="flexSwitchCheckDefault" />
             <label className="form-check-label" htmlFor="flexSwitchCheckDefault">Dark Mode</label>
           </div>
@@ -47,9 +47,11 @@ export default function Navbar(props) {
   )
 }
 Navbar.propTypes = {
-    title: PropTypes.string.isRequired
+  title: PropTypes.string.isRequired,
+  aboutText: PropTypes.string.isRequired
     /*isRequired is optional ... it says that title must be given Without defaultprops it gives ana error when title is not given*/
 }
 Navbar.defaultProps = {
-  title: 'Set title here'
+  title: 'Set title here',
+  aboutText: 'About'
 };

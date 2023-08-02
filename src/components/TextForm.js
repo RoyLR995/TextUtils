@@ -39,7 +39,7 @@ export default function TextForm(props) {
         setText(newText.join(" "));
         props.showAlert("Extra spaces are removed","success")
     }
-    const [text, setText] = useState('Enter text here');
+    const [text, setText] = useState('');
     //text = "new text";//wrong way to change the text
     //setText("new text");//correct way to change the text
     return (

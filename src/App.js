@@ -33,19 +33,23 @@ function App() {
   }
   const toggleMode = (cls) => {
     removeBodyClasses();
-    console.log(cls);
     document.body.classList.add('bg-'+cls)
     if (mode === 'light') {
       setMode('dark');
       document.body.style.backgroundColor = 'gray';
       showAlert(" Dark mode has been enabled", "success")
-      {/*document.title = "TextUtils-Dark Mode"; //to set title when changed to dark mode
-      setInterval(() => {
-        document.title = 'TextUtils is Amazing';
-      }, 2000);
-      setInterval(() => {
-        document.title = 'Install TextUtils now';
-      }, 1500);*/}  //This part is to set the blinking title
+    
+    
+    
+    
+      // document.title = "TextUtils-Dark Mode"; //to set title when changed to dark mode
+      // setInterval(() => {
+      //   document.title = 'TextUtils is Amazing';
+      // }, 2000);
+      // setInterval(() => {
+      //   document.title = 'Install TextUtils now';
+      // }, 1500);
+      //This part is to set the blinking title
     }
     else {
       setMode('light');
@@ -59,7 +63,7 @@ function App() {
       <Router>
       
 
-        <Navbar title="TextUtils" mode={mode} toggleMode={toggleMode} />
+        <Navbar title="TextUtils" mode={mode} toggleMode={toggleMode} key={new Date()} />
         <div style={{ color: 'black', marginLeft: '800px'}}><strong><i>Click twice on the same color to
           toggle light and dark modes</i></strong></div>
       <Alert alert={alert}/>
